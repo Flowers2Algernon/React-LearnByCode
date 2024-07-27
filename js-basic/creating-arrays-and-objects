@@ -1,0 +1,26 @@
+// In Js, remember to use the object literal syntax: {}
+// Remember to use the array literal syntax: []
+
+// Creat a new empty array
+var clothes = [];
+
+// Add some items 
+clothes.push('shirt');
+clothes.push('pants');
+clothes.push('socks');
+clothes.push('shoes');
+clothes.push('hat');
+
+// Remove the fifth item
+clothes.pop();
+
+// Show third item
+console.log(clothes[2]);
+
+// Create a new empty object 
+var favCar = {};
+favCar.color = 'red';
+favCar.convertible = true;
+
+// Show the object
+console.log(favCar);
