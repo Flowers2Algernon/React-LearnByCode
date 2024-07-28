@@ -1,5 +1,5 @@
-class Train{
-    constructor(color, lightsOn){
+class Train {
+    constructor(color, lightsOn) {
         this.color = color;
         this.lightsOn = lightsOn;
     }
@@ -18,7 +18,7 @@ class Train{
 }
 
 class highSpeedTrain extends Train {
-    constructor(passengers, highSpeedOn, color, lightsOn){
+    constructor(passengers, highSpeedOn, color, lightsOn) {
         super(color, lightsOn);
         this.passengers = passengers;
         this.highSpeedOn = highSpeedOn;
@@ -45,6 +45,6 @@ var train4 = new Train('red', false);
 // console.log(train4.getPrototype());
 // console.log(train4.lightsStatus());
 
-var highTrain = new highSpeedTrain(200,false, 'yello', false);
+var highTrain = new highSpeedTrain(200, false, 'yello', false);
 highTrain.toggleHighSpeed();
 highTrain.toggleLights();
