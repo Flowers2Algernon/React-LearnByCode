@@ -2,11 +2,23 @@
 
 .box {
   background-color: blue;
-  padding: 10px;
+  padding: 8px;
 }
 
 p {
   color: yellow;
   margin: 0;
   padding: 0;
+}
+
+.white-text {
+  color: white;
+  border: 10px solid red;
+  background-color: red;
+  margin-left: -10px;
+  padding: 0px;
+}
+
+body {
+  border: 10px solid purple;
 }
