@@ -9,7 +9,9 @@ body {
 .main {
   flex: 1;
 }
-
+div {
+  float: inline-block;
+}
 h1 {
   font-size: 5rem;
 }
@@ -19,3 +21,16 @@ footer {
   color: midnightblue;
 }
 
+.leftcard {
+  float: left;
+}
+
+.rightcard {
+  float: right;
+}
+
+div > div >img {
+  height: 200px;
+  width: 299px;
+  float: left;
+}
