@@ -1,12 +1,16 @@
 var gamePattern = [];
 var buttonColours = ["red", "blue", "green", "yellow"];
 var userClickedPattern = [];
+var level = 0;
+var started = true;
 function nextSequence(){
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
     $("#"+randomChosenColour).fadeOut(200).fadeIn(200);
     playSound(randomChosenColour);
+    level++;
+    $("h1").text("Level "+level);
 }
 $(".btn").on("click",function(){
     var userChosenColour = $(this).attr("id");
@@ -26,3 +30,12 @@ function animatePress(currentColour){
         $("#"+currentColour).removeClass("pressed");
     },100);
 }
+if(started){
+    $(document).on("keydown",function(){
+        $("h1").text("Level "+level);
+        nextSequence();
+        started = false;
+    });
+}
+// here how to ensure just call nextSquence at the first time when the keydown event is triggered
+
