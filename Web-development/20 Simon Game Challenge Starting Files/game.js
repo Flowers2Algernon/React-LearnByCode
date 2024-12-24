@@ -17,7 +17,7 @@ $(".btn").on("click",function(){
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     animatePress(userChosenColour);
-    console.log(userClickedPattern);
+    checkAnswer(userClickedPattern.length-1);
 });
 
 function playSound(name){
@@ -38,4 +38,25 @@ if(started){
     });
 }
 // here how to ensure just call nextSquence at the first time when the keydown event is triggered
+
+function checkAnswer(currentLevel){
+    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]){
+        if(currentLevel == gamePattern.length-1){
+            setTimeout(function(){
+                nextSequence();
+            },1000);
+            userClickedPattern = [];
+        }
+    }else{
+       playSound("wrong");
+       $("body").addClass("game-over");
+       $("h1").text("Game Over, Press Any Key to Restart");
+       level = 0;
+       gamePattern = [];
+       userClickedPattern = [];
+       setTimeout(function(){
+           $("body").removeClass("game-over");
+       },200);
+    }
+}
 
