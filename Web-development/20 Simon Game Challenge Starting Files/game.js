@@ -51,12 +51,16 @@ function checkAnswer(currentLevel){
        playSound("wrong");
        $("body").addClass("game-over");
        $("h1").text("Game Over, Press Any Key to Restart");
-       level = 0;
-       gamePattern = [];
-       userClickedPattern = [];
+       startOver();
        setTimeout(function(){
            $("body").removeClass("game-over");
        },200);
     }
 }
 
+function startOver(){
+    level = 0;
+    gamePattern = [];
+    userClickedPattern = [];
+    started = true;
+}
