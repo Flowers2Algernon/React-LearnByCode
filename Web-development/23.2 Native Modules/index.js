@@ -4,3 +4,8 @@ const fs = require('fs');
 //     if (err) throw err;
 //     console.log('successfully added message to file'); 
 // });
+
+fs.readFile("message.txt",'utf8',(err, data) => {
+    if (err) throw err;
+    console.log(data);
+  }); 
