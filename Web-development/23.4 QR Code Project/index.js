@@ -7,6 +7,6 @@ import inquirer from 'inquirer';
 import qr from 'qr-image';
 import { input } from '@inquirer/prompts';
 
-const answer = await input({ message: 'Enter your name' });
+const answer = await input({ message: 'Enter your url' });
 console.log(answer);
 var qr_svg = qr.image(answer, { type: 'svg' });
