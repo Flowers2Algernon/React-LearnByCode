@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
   res.render("index.ejs", {
-    length: fName.length + lName.length,
+    lengths: req.body["fName"].length + req.body["lName"].length,
   })
 });
 
