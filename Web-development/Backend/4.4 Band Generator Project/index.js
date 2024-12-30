@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
+  res.render("index.ejs", {
+    name: randomChoose(adj) + " " + randomChoose(noun),
+  })
   //Step 2 - Make the generate name functionality work
   //Hint: When the "Generate Name" button in index.ejs is clicked, it should hit up this route.
   //Then:
@@ -32,6 +35,10 @@ app.post("/submit", (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+function randomChoose(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+};
 
 const adj = [
   "abandoned",
