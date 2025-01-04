@@ -15,7 +15,7 @@
     <button type="submit" value="fish" name="choice">🐟</button>
   </form>
   <div id="recipeContainer" class="hidden">
-    <% if (locals.choice) { %>
+    <% if (!locals.object) { %>
     <h2>Pick your favourite taco ingredient 👆</h2>
     <h3>Ingredients:</h3>
     <ul id="ingredientsList">
@@ -24,8 +24,14 @@
       <li>Every other topping</li>
     </ul>
     <% } else { %>
-    <h2>Recipe name</h2>
-    <h3>Ingredients:</h3>
+    <h2><%=object.name %></h2>
+    <h3>Ingredients: </h3>
+    <ul id="ingredientsList">
+      <li><%= object.ingredients.protein.name %>, <%=object.ingredients.protein.preparation %></li>
+      <li><%=object.ingredients.salsa.name %></li>
+      <% object.ingredients.toppings.forEach(topping => { %>
+      <li><%=topping.quantity %> of <%=topping.name %></li>
+      <% }) %>
     <% } %> 
     <!-- If no recipe yet, show: -->
     <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
